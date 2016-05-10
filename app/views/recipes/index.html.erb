@@ -7,7 +7,8 @@
       <div class="row">
         <div class="col-md-2">
           <section class="bar_info center">
-            <h5>Bar name: <%= recipe.bar.barname %></h5>
+            <%= gravatar_for recipe.bar, size: 100 %>
+            <h5>Bar: <%= recipe.bar.barname %> </h5>
           </section>
         </div>
 
