@@ -1,0 +1,19 @@
+<%= render 'shared/errors', obj: @bar %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @bar do |f| %>
+
+    <%= f.label :barname %>
+    <%= f.text_field :barname %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit(@bar.new_record? ? 'Register' : 'Edit Profile', class: 'btn btn-success') %>
+    <% end %>
+  </div>
+</div>
