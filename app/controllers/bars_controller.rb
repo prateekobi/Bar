@@ -1,5 +1,7 @@
 
   class BarsController < ApplicationController
+    before_action :set_bar, only: [:edit, :update, :show]
+    before_action :require_same_user, only: [:edit, :update]
 
     def index
       @bars = Bar.paginate(page: params[:page], per_page: 3)
@@ -21,21 +23,18 @@
     end
 
     def edit
-      @bar = Bar.find(params[:id])
     end
 
     def update
-      @bar = Bar.find(params[:id])
       if @bar.update(bar_params)
         flash[:success] = 'Ypur profile has been updated successfully'
-        redirect_to recipes_path #CHANGE TO SHOW BAR PAGE
+        redirect_to bar_path(@bar)
       else
           render 'edit'
         end
     end
 
     def show
-      @bar = Bar.find(params[:id])
       @recipes = @bar.recipes.paginate(page: params[:page], per_page: 2)
     end
     private
@@ -44,4 +43,14 @@
       params.require(:bar).permit(:barname, :email, :password)
     end
 
+    def set_bar
+      @bar = Bar.find(params[:id])
+    end
+
+    def require_same_user
+      if current_user != @bar
+        flash[:danger] = 'You can only edit your own profile'
+        redirect_to root_path
+      end
+    end
   end
