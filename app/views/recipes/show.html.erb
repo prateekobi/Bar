@@ -3,7 +3,7 @@
 
 <div class="row">
 <div class="col-md-4 pull-right center">
-  <%= gravatar_for @recipe.bar, size: 200 %>
+  <%= link_to gravatar_for(@recipe.bar, size: 200), bar_path(@recipe.bar) %>
   <p>
     <h5>Brought to you by: <%= @recipe.bar.barname %></h5>
   </p>

@@ -1,6 +1,10 @@
 
   class BarsController < ApplicationController
 
+    def index
+      @bars = Bar.paginate(page: params[:page], per_page: 3)
+    end
+
     def new
       @bar = Bar.new
     end
@@ -9,6 +13,7 @@
       @bar = Bar.new(bar_params)
       if @bar.save
         flash[:success] = 'Your account has been created'
+        session[:bar_id] = @bar.id
         redirect_to recipes_path
       else
         render 'new'
@@ -31,7 +36,7 @@
 
     def show
       @bar = Bar.find(params[:id])
-      
+      @recipes = @bar.recipes.paginate(page: params[:page], per_page: 2)
     end
     private
 

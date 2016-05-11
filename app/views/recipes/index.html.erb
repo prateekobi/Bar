@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-2">
           <section class="bar_info center">
-            <%= gravatar_for recipe.bar, size: 100 %>
+            <%= link_to gravatar_for(recipe.bar, size: 100), bar_path(recipe.bar) %>
             <h5>Bar: <%= recipe.bar.barname %> </h5>
           </section>
         </div>
