@@ -1,6 +1,13 @@
 
   class StylesController < ApplicationController
 
+    before_action :require_user, except: [:show]
+
+    def show
+      @style = Style.find(params[:id])
+      @recipes = @style.recipes.paginate(page: params[:page], per_page: 3)
+    end
+
     def new
       @style = Style.new
     end
