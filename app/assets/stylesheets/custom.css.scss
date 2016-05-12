@@ -5,6 +5,10 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+  body{
+    background-color: black;
+  }
+
   #logo{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -46,6 +50,7 @@
 
   h1, h2, h3, h4{
     line-height: 1em;
+    color: white;
   }
 
   h1{
@@ -148,4 +153,13 @@
   }
   .show_recipe{
     margin: 10px 10px 10px 10px;
+  }
+
+  .about-page{
+    color: grey;
+  }
+
+  .heading-about{
+    font-family: 'Lobster Two', cursive;
+    color: white !important;
   }
