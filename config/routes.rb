@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bars, except: [:new]
+  resources :bars, except: [:new, :destroy]
 
   get '/register', to: 'bars#new'
 
