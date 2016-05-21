@@ -31,7 +31,10 @@ gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 # gem 'fog-aws'
 # gem 'fog'
-gem 'fog', '~> 1.23'# Use ActiveModel has_secure_password
+gem 'fog', '~> 1.23'
+# gem 'nokogiri'
+# gem "fog", "~> 1.3.1"
+# Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
