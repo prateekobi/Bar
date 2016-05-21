@@ -19,7 +19,7 @@ This application gives cocktail enthusiats an environment in which they can shar
 
 
 
-### Tech
+###Tech
 Most of this application is written Ruby on Rails with the exception of a little jquery/javascript.
 
 
