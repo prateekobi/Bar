@@ -29,4 +29,5 @@ Most of this application is written Ruby on Rails with the exception of a little
 This application is deployed on heroku https://mybarapp.herokuapp.com/
 
 I hope you enjoy this application
+
 Prateek Obireddy
